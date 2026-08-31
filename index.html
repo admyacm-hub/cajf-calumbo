@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Aconselhamento Jurídico Familiar de Calumbo</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #002b5c;
+            --primary-dark: #001731;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f4e8b1;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --shadow-subtle: 0 10px 30px -5px rgba(0, 43, 92, 0.08);
+            --shadow-hover: 0 20px 40px -10px rgba(0, 43, 92, 0.15);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-blue));
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 10px 0;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .top-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-info span {
+            margin-right: 25px;
+        }
+
+        .top-bar-info i {
+            color: var(--accent-gold);
+            margin-right: 8px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-subtle);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-badge {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-gold), #b39228);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            display: block;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 23, 49, 0.94), rgba(0, 43, 92, 0.88)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: var(--white);
+            padding: 140px 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 950px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h2 span {
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 35px;
+            font-weight: 300;
+            color: #e2e8f0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            font-style: italic;
+            font-size: 1.2rem;
+            background: rgba(212, 175, 55, 0.15);
+            border-left: 4px solid var(--accent-gold);
+            padding: 16px 28px;
+            margin-bottom: 40px;
+            display: inline-block;
+            border-radius: 0 10px 10px 0;
+            backdrop-filter: blur(8px);
+            color: var(--accent-gold-light);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--accent-gold), #b39228);
+            color: var(--primary-dark);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #e0be45, var(--accent-gold));
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 100px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-weight: 800;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* Sobre Nós */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.9rem;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .values-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-subtle);
+            border-top: 4px solid var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .value-card i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .value-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .value-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .about-badge-card {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            padding: 50px 40px;
+            border-radius: 20px;
+            color: var(--white);
+            text-align: center;
+            box-shadow: var(--shadow-hover);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        .about-badge-card i {
+            font-size: 4.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+        }
+
+        .about-badge-card h4 {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .about-badge-card p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Serviços */
+        .services-wrapper {
+            background-color: #f1f5f9;
+            width: 100%;
+            padding: 100px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card:hover::before {
+            background: var(--accent-gold);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 43, 92, 0.05);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary-blue);
+            color: var(--accent-gold);
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Recursos */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .resource-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .resource-header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .resource-header i {
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+        }
+
+        .resource-body {
+            padding: 30px;
+        }
+
+        .resource-body p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .resource-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+
+        .resource-link:hover {
+            color: var(--accent-gold);
+            gap: 15px;
+        }
+
+        /* Contactos */
+        .contact-wrapper {
+            background-color: #f1f5f9;
+            width: 100%;
+            padding: 100px 0;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-hover);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-top: 4px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--primary-blue);
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+
+        .info-item p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .contact-form h3 {
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: #f8fafc;
+            color: var(--text-dark);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 140px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background-color: var(--white);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 70px 2rem 30px;
+            text-align: center;
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-lema {
+            font-size: 1.7rem;
+            color: var(--accent-gold);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            background-color: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            z-index: 999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.12) rotate(5deg);
+            background-color: #20ba5a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid, .contact-container, .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            .values-box {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-blue);
+                padding: 30px 0;
+                box-shadow: var(--shadow-hover);
+                text-align: center;
+                gap: 20px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+            .top-bar {
+                display: none;
+            }
+            .contact-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-info">
+                <span><i class="fas fa-map-marker-alt"></i> Calumbo, Icolo e Bengo, Luanda</span>
+                <span><i class="fas fa-envelope"></i> geral@cajf-calumbo.ao</span>
+            </div>
+            <div class="top-bar-info">
+                <span><i class="fas fa-clock"></i> Seg - Sex: 08:00 - 16:00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navegação -->
+    <header>
+        <nav class="navbar">
+            <a href="#inicio" class="logo-area">
+                <div class="logo-badge">CA</div>
+                <div class="logo-text">
+                    <h1>CAJF Calumbo</h1>
+                    <span>Justiça, Família e Paz</span>
+                </div>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Início</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. Página Inicial (Hero) -->
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <h2>Centro de Aconselhamento Jurídico Familiar <span>de Calumbo</span></h2>
+            <div class="hero-cta">“Pela Justiça, pela Família e pela Paz nas Comunidades.”</div>
+            <p>Atendimento institucional de proximidade focado no combate à violência doméstica, proteção integral da célula familiar e resolução pacífica de conflitos comunitários em Icolo e Bengo.</p>
+            <div class="hero-buttons">
+                <a href="#servicos" class="btn btn-gold"><i class="fas fa-scale-balanced"></i> Nossos Serviços</a>
+                <a href="#contactos" class="btn btn-outline"><i class="fas fa-headset"></i> Atendimento Urgente</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Sobre Nós -->
+    <section id="sobre">
+        <div class="section-title">
+            <h2>Sobre Nós</h2>
+            <p>Conheça a nossa missão e os pilares fundamentais da nossa atuação em Icolo e Bengo</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Compromisso com a Harmonia, Dignidade e Cidadania</h3>
+                <p>O Centro de Aconselhamento Jurídico Familiar de Calumbo é uma instituição dedicada a aproximar a justiça formal e comunitária dos cidadãos. Prestamos suporte jurídico humanizado, mediação de conflitos vicinais e salvaguarda absoluta dos direitos fundamentais da família.</p>
+                <p>Trabalhamos em estreita articulação com as autoridades locais para fomentar uma cultura duradoura de paz, respeito mútuo e equidade social.</p>
+                
+                <div class="values-box">
+                    <div class="value-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <h4>Justiça</h4>
+                        <p>Equidade e rigor na aplicação dos direitos.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-hands-holding-child"></i>
+                        <h4>Dignidade</h4>
+                        <p>Respeito pela integridade humana.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-dove"></i>
+                        <h4>Respeito</h4>
+                        <p>Valorização do tecido social e cultural.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="about-badge-card">
+                    <i class="fas fa-shield-heart"></i>
+                    <h4>Proteção Comunitária</h4>
+                    <p>Unidos por uma sociedade mais justa, onde cada família encontra amparo legal, diálogo seguro e soluções pacíficas para os seus litígios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Serviços -->
+    <div class="services-wrapper">
+        <div id="servicos" style="padding: 0 2rem; max-width: 1200px; margin: 0 auto;">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Soluções especializadas orientadas para o bem-estar social e a legalidade</p>
+            </div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                <h3>Aconselhamento Jurídico</h3>
+                <p>Orientações legais transparentes e acessíveis sobre direito de família, heranças e registo civil para os munícipes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Proteção à Família</h3>
+                <p>Acompanhamento integrado a núcleos familiares vulneráveis, garantindo amparo legal e social a menores e dependentes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hand-holding-hand"></i></div>
+                <h3>Combate à Violência Doméstica</h3>
+                <p>Canal seguro de acolhimento, escuta qualificada, orientação de denúncias e apoio psicológico para as vítimas.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-comments"></i></div>
+                <h3>Mediação de Conflitos</h3>
+                <p>Sessões de diálogo assistido para solucionar desentendimentos familiares e comunitários sem recurso imediato aos tribunais.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Orientação Comunitária</h3>
+                <p>Palestras educativas e de sensibilização em escolas e bairros sobre direitos cívicos e deveres parentais.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Recursos -->
+    <section id="recursos">
+        <div class="section-title">
+            <h2>Recursos e Biblioteca</h2>
+            <p>Documentação legislativa, artigos e material de apoio institucional</p>
+        </div>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-header">
+                    <i class="fas fa-book-open"></i> Biblioteca Digital
+                </div>
+                <div class="resource-body">
+                    <p>Consulte a Constituição da República de Angola, a Lei da Família e guias práticos atualizados.</p>
+                    <a href="#" class="resource-link">Aceder aos documentos <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-header">
+                    <i class="fas fa-newspaper"></i> Artigos e Notícias
+                </div>
+                <div class="resource-body">
+                    <p>Mantenha-se informado com orientações sobre prevenção de conflitos e atualizações de direitos cívicos.</p>
+                    <a href="#" class="resource-link">Ler publicações <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-header">
+                    <i class="fas fa-download"></i> Área de Downloads
+                </div>
+                <div class="resource-body">
+                    <p>Descarregue cartazes educativos, brochuras informativas e formulários oficiais de atendimento.</p>
+                    <a href="#" class="resource-link">Descarregar ficheiros <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contactos -->
+    <div class="contact-wrapper">
+        <div id="contactos" style="padding: 0 2rem; max-width: 1200px; margin: 0 auto;">
+            <div class="section-title">
+                <h2>Contactos e Localização</h2>
+                <p>Estamos inteiramente à disposição para apoiar a comunidade de Calumbo</p>
+            </div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Informações Institucionais</h3>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Endereço Físico</strong>
+                        <p>Comuna de Calumbo, Município de Icolo e Bengo, Província de Luanda, Angola.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Linhas Telefónicas</strong>
+                        <p>+244 900 000 000 / +244 930 000 000</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Horário de Funcionamento</strong>
+                        <p>Segunda a Sexta-feira: 08:00 - 16:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Formulário de Contacto</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu Nome Completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu Contacto Telefónico ou WhatsApp" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Assunto (ex: Aconselhamento, Mediação)" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Escreva sua mensagem ou descreva brevemente a situação..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/244930000000" target="_blank" class="whatsapp-float" title="Atendimento via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- 6. Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-lema">“Justiça, Dignidade e Respeito para Todos!”</div>
+            <ul class="footer-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            Direitos reservados &copy; CAJF Calumbo 2026. Desenvolvido para servir a comunidade de Icolo e Bengo com excelência e rigor institucional.
+        </div>
+    </footer>
+
+    <!-- Script for Mobile Menu & Active Links -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
